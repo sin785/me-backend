@@ -16,12 +16,14 @@ const connection = mysql.createConnection({
 });
 
 
-
-
-
 var app = express()
 
 app.use(cors())
+
+app.get('/', function (req, res, next) {
+  res.json({msg: 'Home Page'})
+})
+
 
 app.get('/helloworld', function (req, res, next) {
   res.json({msg: 'helloword'})
